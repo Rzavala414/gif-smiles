@@ -1,9 +1,12 @@
+
+
 let btn = document.querySelector('button');
 
 const searchGiphy = async()=>{
   try{
     
     const apiKey = '';
+    
     let gifContainer = document.getElementById('gifResults');
     // Grab user input
     let inputElement = document.getElementById('gif');
