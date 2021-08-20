@@ -3,16 +3,36 @@
 <head>
   <title>GifSmile</title>
    <meta name="viewport" content="width=device-width,initial-scale=1" >
-
-  <link href='style.css' rel='stylesheet'>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap" rel="stylesheet">
+   
+  <link href="style.css" rel="stylesheet">
 </head>
 <body>
-  <div id='container'>
+  <div id="container">
     <h1>GifSmile </h1>
-    <input id="gif" name='gif' placeholder='Search for gif' />
+    <input id="gif" name="gif" type="text" placeholder="Search for gif" />
+
     <button>Search For Gif</button>
+    
+    <div class="radio">
+        <input class="radio-input" id="g" type="radio" name="rating" value="g" checked="checked" />
+        <label class="radio-label" for="g">G</label>
+
+        <input class="radio-input" id="pg" type="radio" name="rating" value="pg" />
+        <label class="radio-label" for="pg">PG</label>
+
+        <input class="radio-input" id="pg-13" type="radio" name="rating" value="pg-13" />
+        <label class="radio-label" for="pg-13">PG-13</label>
+
+        <input class="radio-input" id="r" type="radio" name="rating" value="r" />
+        <label class="radio-label" for="r">R</label>
+     
+    </div>
+   
     <div id="gifResults" class="grid-container"></div>
   </div>
 </body>
-  <script src='script.js'></script>
+  <script src="script.js"></script>
 </html>
