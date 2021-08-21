@@ -5,7 +5,7 @@ let btn = document.querySelector('button');
 const searchGiphy = async()=>{
   try{
     
-    const apiKey = 'xKtabkdViFrxRn5oMum5q8ysKXiEX62t';
+    const apiKey = '';
     
     let gifContainer = document.getElementById('gifResults');
     // Grab user input
@@ -14,7 +14,7 @@ const searchGiphy = async()=>{
     const keyWord = inputElement.value;
   
     // if no user input, display default endpoint with welcome gif
-    const endpoint = keyWord ? `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${keyWord}&limit=25&rating=${rating}&offset=0&lang=en` : `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=welcome&limit=1&rating=${rating}&offset=0&lang=en`;
+    const endpoint = keyWord ? `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${keyWord}&limit=50&rating=${rating}&offset=0&lang=en` : `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=welcome&limit=50&rating=${rating}&offset=0&lang=en`;
 
     // Fetch Request
     const response = await fetch(endpoint);
