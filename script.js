@@ -5,15 +5,16 @@ let btn = document.querySelector('button');
 const searchGiphy = async()=>{
   try{
     
-    const apiKey = '';
+    const apiKey = 'xKtabkdViFrxRn5oMum5q8ysKXiEX62t';
     
     let gifContainer = document.getElementById('gifResults');
     // Grab user input
     let inputElement = document.getElementById('gif');
+    let rating = document.querySelector('input[name="rating"]:checked').value;
     const keyWord = inputElement.value;
   
     // if no user input, display default endpoint with welcome gif
-    const endpoint = keyWord ? `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${keyWord}&limit=25&rating=g&offset=0&lang=en` : `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=welcome&limit=1&rating=g&offset=0&lang=en`;
+    const endpoint = keyWord ? `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${keyWord}&limit=25&rating=${rating}&offset=0&lang=en` : `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=welcome&limit=1&rating=${rating}&offset=0&lang=en`;
 
     // Fetch Request
     const response = await fetch(endpoint);
@@ -49,5 +50,7 @@ btn.addEventListener('click', searchGiphy);
 window.addEventListener('load', searchGiphy);
 // checks if enter key is pressed
 window.addEventListener('keyup', (event) => {
+
   if(event.keyCode === 13) searchGiphy();
 })
+
