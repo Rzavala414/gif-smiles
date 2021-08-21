@@ -28,7 +28,12 @@ const searchGiphy = async()=>{
     }else{
 
       // Create array with img tags with gif
-      let gifs = data.map(item => `<img src=${item.images.original.url} />`);
+      let gifs = data.map(item => {
+          return (`<div class="img-container">
+                        <img src=${item.images.original.url} />
+                        <p>Rating: ${item.rating.toUpperCase()}</p>
+                   </div>`)
+      });
 
       //create a string of img tags
       let htmlImgTags = '';

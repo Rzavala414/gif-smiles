@@ -1,3 +1,4 @@
+/* global css */
 body {
   background: #000;
   color: #fff;
@@ -22,6 +23,16 @@ button{
   cursor: pointer;
   outline: inherit;
 }
+
+/* my css */
+.img-container p{
+  font-size: 1.5em;
+  color: rgba(255,168,0, 0.7);
+  position: relative;
+  bottom: 65px;
+  left: 418px;
+}
+
 
 .radio-container{
   display: inline;
