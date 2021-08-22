@@ -27,7 +27,7 @@ const searchGiphy = async()=>{
       gifContainer.innerHTML = '<h1>oops no gifs found, search again</h1>';
     }else{
 
-      // Create array with img tags with gif
+      // Create array of divs with gifs and ratings
       let gifs = data.map(item => {
           return (`<div class="img-container">
                         <img src=${item.images.original.url} />
@@ -36,12 +36,12 @@ const searchGiphy = async()=>{
       });
 
       //create a string of img tags
-      let htmlImgTags = '';
+      let imgContainers = '';
       for(let i=0; i < gifs.length; i++){
-        htmlImgTags += ` ${gifs[i]}`;
+        imgContainers += ` ${gifs[i]}`;
       }
       // append string of images to gif container
-      gifContainer.innerHTML = htmlImgTags;
+      gifContainer.innerHTML = imgContainers;
       // clear input value
       inputElement.value = ''
     }
