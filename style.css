@@ -10,6 +10,7 @@ img{
   height: 100%;
   width: 100%;
   border: 2px solid #33FF99;
+  cursor: pointer;
 }
 
 button{
@@ -20,6 +21,18 @@ button{
   border: none;
   font: inherit;
   cursor: pointer;
+  outline: inherit;
+}
+
+a{
+  background: rgba(14, 185, 142, 0.808);
+  color: inherit;
+  margin: 40px;
+  padding: .5rem;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: none;
   outline: inherit;
 }
 
