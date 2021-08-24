@@ -1,5 +1,4 @@
 
-
 let btn = document.querySelector('button');
 
 const searchGiphy = async()=>{
@@ -20,7 +19,15 @@ const searchGiphy = async()=>{
     const response = await fetch(endpoint);
     const json = await response.json();
     const data = json.data;
-    console.log(data)
+    
+    let gifData = data.map(item =>{
+        return ({
+            id: item.id,
+            image: item.images.original.url,
+            rating: item.rating
+        })
+    })
+    
 
     // if no results found display no results message
     if(data.length < 1){
@@ -28,9 +35,9 @@ const searchGiphy = async()=>{
     }else{
 
       // Create array of divs with gifs and ratings
-      let gifs = data.map(item => {
-          return (`<div class="img-container">
-                        <img src=${item.images.original.url} />
+      let gifs = gifData.map(item => {
+          return (`<div id=${item.id} class="img-container" onClick="${addTofavorites}">
+                        <img src=${item.image} />
                         <p>Rating: ${item.rating.toUpperCase()}</p>
                    </div>`)
       });
@@ -56,6 +63,6 @@ window.addEventListener('load', searchGiphy);
 // checks if enter key is pressed
 window.addEventListener('keyup', (event) => {
 
-  if(event.keyCode === 13) searchGiphy();
+  if(event.key === "Enter") searchGiphy();
 })
 
