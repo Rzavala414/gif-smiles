@@ -36,7 +36,7 @@ const searchGiphy = async()=>{
 
       // Create array of divs with gifs and ratings
       let gifs = gifData.map(item => {
-          return (`<div id=${item.id} class="img-container" onClick="${addTofavorites}">
+          return (`<div id=${item.id} class="img-container">
                         <img src=${item.image} />
                         <p>Rating: ${item.rating.toUpperCase()}</p>
                    </div>`)
