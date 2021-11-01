@@ -1,10 +1,8 @@
-
 let btn = document.querySelector('button');
 
 const searchGiphy = async()=>{
   try{
-    
-    const apiKey = '';
+    const apiKey = 'xKtabkdViFrxRn5oMum5q8ysKXiEX62t';
     
     let gifContainer = document.getElementById('gifResults');
     // Grab user input
